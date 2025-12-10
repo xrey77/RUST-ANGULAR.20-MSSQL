@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/prodcatalog/prodcatalog.scss"],
+  "sourcesContent": [".card-body-height {\n    height: 14vh;\n}\n\n.bg-black {\n    height: auto;\n    background-color: black;\n    width: 100vw !important;\n    height: 90vh !important;\n}\n\n.left-10 {\n    margin-left: 10px !important;\n}\n"],
+  "mappings": "AAAA,CAAA,iBACI,OAAA,KAGJ,CAAA,SACI,OAAA,KACA,iBAAA,KACA,MAAA,gBACA,OAAA,eAGJ,CAAA,QACI,YAAA",
+  "names": []
+}

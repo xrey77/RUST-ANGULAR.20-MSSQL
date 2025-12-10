@@ -1,0 +1,51 @@
+body {
+  overflow: hidden !important;
+}
+.embossed-text {
+    text-shadow: 
+    -1px -1px 1px #09521a, /* Lighter shade for highlight */
+    3px 1px 1px hsl(0, 7%, 38%);   /* Darker shade for shadow */
+  }
+
+  .carousel-indicators [data-bs-target] {  
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #bfe159;
+    background-clip: padding-box;
+    border: 0;
+    border-radius: 50%;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: .5;
+    transition: opacity .6s ease;
+  }
+  
+  .carousel-inner .carousel-item img {
+    max-width: 100% !important;
+    height: 89vh;
+    object-fit: cover;
+    scrollbar-width: none !important; /* For Firefox */
+    -ms-overflow-style: none !important; /* For Internet Explorer and Edge */
+  }
+  
+  @media (max-width: 991.98px) {
+    .carousel-inner .carousel-item img {
+      max-width: 100% !important;
+      height: auto;
+      object-fit: cover;
+      scrollbar-width: none !important; /* For Firefox */
+      -ms-overflow-style: none !important; /* For Internet Explorer and Edge */
+    }
+      
+   }
+
+    .carousel-indicators li.active {
+      background-color: #f3f708; /* Active indicator color */
+    }

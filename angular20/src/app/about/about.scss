@@ -1,0 +1,47 @@
+.contact-img {
+    border-radius: 20px !important;
+    width: 100%;
+    height: 50vh;
+    padding-left: 70px;
+    padding-right: 70px;
+    object-fit: cover;
+}
+
+.h1 {
+ padding-left: 70px;
+}
+
+.p70 {
+    padding-left: 70px;
+    padding-right: 70px;
+}
+.justify {
+    text-align: justify;
+}
+
+@media (max-width: 991.98px) {
+    .contact-img {
+        margin-left: -75px;
+        width: 125vw;
+        padding-right: 50px;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .h1 {
+        padding-left: 0px;
+       }
+       
+       .p70 {
+           padding-left: 0px;
+           padding-right: 0px;
+       }
+         
+ }
+ .bg-black {
+    height: auto;
+    background-color: black;
+    width: 100vw !important;
+    height: 90vh !important;
+    overflow-x: hidden !important;
+}

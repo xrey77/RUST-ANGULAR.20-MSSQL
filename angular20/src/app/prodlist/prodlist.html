@@ -1,0 +1,43 @@
+<div class="bg-black">
+  <div class="container bg-dark">
+
+    <h2 class="text-warning">Product List</h2>     
+    <table class="table table-danger table-striped table-hover">
+        <thead class="table-dark">
+          <tr>
+            <th class="bg-primary text-white" scope="col">#</th>
+            <th class="bg-primary text-white" scope="col">Descriptions</th>
+            <th class="bg-primary text-white" scope="col">Stocks</th>
+            <th class="bg-primary text-white" scope="col">Unit</th>            
+            <th class="bg-primary text-white" scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        @for (product of products; track product.id) {
+          <tr>
+            <td>{{product.id}}</td>
+            <td>{{product.descriptions}}</td>
+            <td>{{product.qty}}</td>
+            <td>{{product.unit}}</td>
+            <td>{{toDecimal(product.sellprice)}}</td>
+          </tr>
+        }
+        </tbody>
+      </table>
+
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a (click)="lastPage($event)" class="page-link" href="#">Last</a></li>
+          <li class="page-item"><a (click)="prevPage($event)" class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a (click)="nextPage($event)" class="page-link" href="#">Next</a></li>
+          <li class="page-item"><a (click)="firstPage($event)" class="page-link" href="#">First</a></li>
+          <li class="page-item page-link text-danger">Page&nbsp;{{page}} of&nbsp;{{totpage}}</li>
+
+        </ul>
+      </nav>
+      <h3 class="text-white">&nbsp;&nbsp;&nbsp;Total Records : {{totalrecs}}</h3>
+      <div class="text-warning">&nbsp;&nbsp;&nbsp;{{message}}</div>
+ </div>
+</div>
+<app-footer class="fixed-bottom text-white"></app-footer>

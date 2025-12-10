@@ -1,0 +1,41 @@
+<div class="bg-black mb-5">
+  <div class="container-fluid bg-dark">
+    <h3 class="text-warning">&nbsp;Product Catalogs</h3>
+
+    <div class="card-group">
+
+    @for (product of products; track product.id) {
+        <div class="col-md-4">
+        <div class="card mx-1 mt-2">
+          <img src="{{`http://127.0.0.1:3000/assets/products/${product.productpicture}`}}" class="card-img-top" alt="Product Image">
+          <div class="card-body card-body-height">
+            <h5 class="card-title">Descriptions</h5>
+            <p class="card-text">{{product.descriptions}}</p>
+          </div>
+          <div class="card-footer">
+            <p class="card-text text-danger"><span class="text-dark">PRICE :</span>&nbsp;<strong>{{toDecimal(product.sellprice)}}</strong></p>
+          </div>  
+        </div>
+    </div>
+    }
+
+    
+    </div>    
+      <div class="left-10">
+      <nav aria-label="Page navigation example">
+        <ul class="pagination mt-4">
+          <li class="page-item"><a (click)="lastPage($event)" class="page-link" href="#">Last</a></li>
+          <li class="page-item"><a (click)="prevPage($event)" class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a (click)="nextPage($event)" class="page-link" href="#">Next</a></li>
+          <li class="page-item"><a (click)="firstPage($event)" class="page-link" href="#">First</a></li>
+          <li class="page-item page-link text-danger">Page&nbsp;{{page}} of&nbsp;{{totpage}}</li>
+
+        </ul>
+      </nav>
+      </div>
+      <br/><br/>
+        <app-footer class="text-white"></app-footer>
+        <br/>
+    </div>
+
+</div>

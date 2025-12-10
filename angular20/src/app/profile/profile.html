@@ -1,0 +1,97 @@
+<div class="bg-black">
+    <br/>
+    <div class="card bg-dark mx-5 mb-4">
+        <div class="card-header bg-success text-white">
+          USER PROFILE ID NO.&nbsp; {{userId}}
+        </div>
+        <div class="card-body bg-warning">
+            <form [formGroup]="profileForm" (ngSubmit)="submitProfileForm()" enctype="multipart/form-data" autocomplete="off">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <input type="text" required formControlName="firstname" name="firstname" class="form-control" >
+                      </div>
+                      <div class="mb-3">
+                        <input type="text" required formControlName="lastname" name="lastname" class="form-control">
+                      </div>                      
+                      <div class="mb-3">
+                        <input type="email" id="email" class="form-control" readonly>
+                      </div>                      
+                      <div class="mb-3">
+                        <input type="text" formControlName="mobile" name="mobile" class="form-control">
+                        @if (showSave === false) {
+                            <button id="save" type="submit" class="btn btn-primary">Update profile</button>
+                        }
+                    </div>                      
+
+                </div>
+                <div class="col">
+                    <div class="mb-3 text-left">
+                        <img id="pix" class="userpic" [src]="profilepic" name="profilepic" [alt]="profilepic" />
+                    </div>
+                    <div class="mb-3 text-left">
+                        <input (change)="changeProfilepic($event)" class="form-control form-control-sm" name="userpic" id="userpic" type="file" accept=".png, .jpg, .jpeg, .gif">
+                    </div>                            
+                </div>
+            </div>
+        </form>
+
+            <div class="row">
+                <div class="col">
+                    <div class="form-check">
+                        <input (change)="changePassword()" class="form-check-input" type="checkbox" value="" id="changepwd">
+                        <label class="form-check-label" for="changepwd">
+                          Change Password
+                        </label>
+                    </div>
+                    <div id="cpwd">
+                        <form [formGroup]="passwordChangeForm" (ngSubmit)="passwordChange()" novalidate autocomplete="off">
+                        <div class="mb-3">
+                            <input type="password" required formControlName="newpassword" name="newpassword" class="form-control" placeholder="enter new Password" autocomplete="off">
+                          </div>                      
+                          <div class="mb-3">
+                            <input type="password" required formControlName="confnewpassword" name="confnewpassword" class="form-control" placeholder="confirm new Password" autocomplete="off">
+                          </div>                              
+                          <button id="ChangePassword"  type="submit" class="btn btn-secondary">Change Password</button>
+                          </form>
+                    </div>
+
+                    <div id="mfa1">
+                            <img class="qrcode1" [ngSrc]="qrcodeurl" [alt]="qrcodeurl"/>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="form-check">
+                        <input (change)="onetimePassword()" class="form-check-input" type="checkbox" value="" id="twofactor">
+                        <label class="form-check-label" for="twofactor">
+                          2-Factor Authenticator
+                        </label>
+                    </div>
+                    <div id="mfa2">
+                        <p class='text-danger'><strong>Requirements</strong></p>
+                        <p>You need to install <strong>Google or Microsoft Authenticator</strong> in your Mobile Phone, once installed, click Enable Button below, and <strong>SCAN QR CODE</strong>, next time you login, another dialog window will appear, then enter the <strong>OTP CODE</strong> from your Mobile Phone in order for you to login.</p>
+                        <div class="row">
+                            <div class="col">
+                                <button (click)="enableMFA($event)" type="button" class="btn btn-primary mt-1 mx-1">Enable</button>
+                                <button (click)="disableMFA($event)" type="button" class="btn btn-secondary mt-1">Disable</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-warning">
+            {{profileMsg()}}
+          </div>
+
+
+
+      </div>
+      @if (mfa == false) {
+        <app-footer class="text-white"></app-footer>
+        } @else {
+            <app-footer class="fixed-bottom text-white"></app-footer>
+        }      
+</div>

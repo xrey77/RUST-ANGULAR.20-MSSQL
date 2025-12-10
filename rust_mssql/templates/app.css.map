@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/app.scss"],
+  "sourcesContent": [".footer {\n    position: absolute;\n    width: 100% !important;\n    font-size: 12px;\n}\n\n@media (max-width: 991.98px) {\n    .footer {\n        position: absolute;\n        width: 100% !important;\n        font-size: 12px;\n        bottom: -60px !important;\n    }\n    \n}"],
+  "mappings": "AAAA,CAAA,OACI,SAAA,SACA,MAAA,eACA,UAAA,KAGJ,OAAA,CAAA,SAAA,EAAA,UACI,CAPJ,OAQQ,SAAA,SACA,MAAA,eACA,UAAA,KACA,OAAA",
+  "names": []
+}

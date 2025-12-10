@@ -1,0 +1,53 @@
+<div class="bg-black">
+  <div class="container-fluid bg-dark">
+    <h2 class="top-10 text-warning">Search Product</h2>
+
+    <form [formGroup]="productsearchForm" (ngSubmit)="submitSearchForm()" class="row g-3" autocomplete="off">
+        <div class="col-auto">
+          <input type="text" class="form-control-sm" required formControlName="searchkey"  name="searchkey" placeholder="enter Product keyword">
+          <div class="text-warning">{{message}}</div>
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary btn-sm mb-3">search</button>
+        </div>
+    </form>
+    
+    <div class="card-group">
+      @for (prods of products; track prods.id) {
+       <div class="col-md-4">
+        <div class="card mx-1 mt-3">
+        <img src="{{`http://127.0.0.1:3000/assets/products/${prods.productpicture}`}}" class="card-img-top product-size" alt="Product Image"/>
+        <div class="card-body">
+          <h5 class="card-title">Descriptions</h5>
+          <p class="card-text">{{prods.descriptions}}</p>
+        </div>
+        <div class="card-footer">
+          <p class="card-text text-danger"><span class="text-dark">PRICE :</span>&nbsp;<strong>{{toDecimal(prods.sellprice) }}</strong></p>
+        </div>  
+        </div>
+    </div>
+    }
+  </div>    
+
+  @if (totpage > 1) {
+  <div class="mt-2 mb-3">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item"><a (click)="lastPage($event)" class="page-link" href="#">Last</a></li>
+      <li class="page-item"><a (click)="prevPage($event)" class="page-link" href="#">Previous</a></li>
+      <li class="page-item"><a (click)="nextPage($event)" class="page-link" href="#">Next</a></li>
+      <li class="page-item"><a (click)="firstPage($event)" class="page-link" href="#">First</a></li>
+      <li class="page-item page-link text-danger">Page&nbsp;{{page}} of&nbsp;{{totpage}}</li>
+    </ul>
+  </nav>
+</div>
+  }
+
+  @if (totalrec < 4) {
+    <app-footer class="bg-dark fixed-bottom text-white"></app-footer>
+  } @else {
+    <app-footer class="bg-dark text-white"></app-footer>
+  }
+  <br/>
+  </div>
+</div>

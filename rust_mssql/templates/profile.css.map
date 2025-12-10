@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/profile/profile.scss"],
+  "sourcesContent": [".userpic {\n    width: 150px;\n    height: 150px;\n    border-radius: 20px;\n}\n.fsize-12 {\n    font-size: 12px;\n}\n.qrcode1 {\n  float: right;\n  width: 200px;\n  height: 200px;\n}\n.qrcode2 {\n  float: right;\n  width: 200px;\n  height: 200px;\n  opacity: 0.5;\n}\n.btn-1 {\n  max-width: 100px!important;\n}\n.btn-2 {\n  float: left!important;\n}\n#save {\n  margin-top: 30px!important;\n}\n@media (max-width: 575.98px) {\n  .btn-2 {\n    float: right!important;\n  }\n  #save {\n    margin-top: 30px!important;\n  }\n  \n }\n\n .bg-black {\n  background-color: black !important;\n  width: 100vw !important;\n  height: 90vh !important;\n }"],
+  "mappings": "AAAA,CAAA,QACI,MAAA,MACA,OAAA,MAFJ,cAGI,KAEJ,CAAA,SACI,UAAA,KAEJ,CAAA,QACE,MAAA,MACA,MAAA,MACA,OAAA,MAEF,CAAA,QACE,MAAA,MACA,MAAA,MACA,OAAA,MACA,QAAA,GAEF,CAAA,MACE,UAAA,gBAEF,CAAA,MACE,MAAA,eAEF,CAAA,KACE,WAAA,eAEF,OAAA,CAAA,SAAA,EAAA,UACE,CAPF,MAQI,MAAA,gBAEF,CAPF,KAQI,WAAA,gBAKH,CAAA,SACC,iBAAA,eACA,MAAA,gBACA,OAAA",
+  "names": []
+}

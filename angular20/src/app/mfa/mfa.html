@@ -1,0 +1,21 @@
+ <ng-template #mfaTemplate let-c="close" let-d="dismiss">
+	<div class="modal-header modal-diaglog-centered bg-warning">
+		<h3 class="modal-title h3" id="modal-basic-title">Multi-Factor Authenticator</h3>
+		<button (click)="closeMfa()" type="button" class="btn-close" aria-label="Close"></button>
+	</div>
+	<div class="modal-body">
+    <form [formGroup]="mfaForm" (ngSubmit)="submitMfaForm()" autocomplete="off">
+      <div class="mb-3">
+        <input type="text" required formControlName="otpcode" name="otpcode" class="form-control border-warning" placeholder="enter 6-digit OTP code">
+      </div>            
+      <button type="submit" class="btn btn-warning mx-1">submit</button>
+      <button id="reset" type="reset" class="btn btn-warning">reset</button>
+  </form>
+  </div>
+	<div class="modal-footer">
+    <div class="w-100 text-center text-danger">{{message()}}</div>
+  </div>
+</ng-template>
+<button id="showMfa" class="btn btn-lg d-none" (click)="mfaOpen(mfaTemplate)">Launch Mfa</button> 
+
+

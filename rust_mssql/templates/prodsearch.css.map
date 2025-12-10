@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/prodsearch/prodsearch.scss"],
+  "sourcesContent": [".bg-black {\n    height: auto;\n    background-color: black;\n    width: 100vw !important;\n    height: 90vh !important;\n    overflow-x: hidden !important;\n}\n\n.card-body {\n    height: 14vh !important;\n}"],
+  "mappings": "AAAA,CAAA,SACI,OAAA,KACA,iBAAA,KACA,MAAA,gBACA,OAAA,eACA,WAAA,iBAGJ,CAAA,UACI,OAAA",
+  "names": []
+}

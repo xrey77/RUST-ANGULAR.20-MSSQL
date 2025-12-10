@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/about": {},
+    "/contact": {},
+    "/productcatalog": {},
+    "/productlist": {},
+    "/productsearch": {},
+    "/profile": {},
+    "/static": {}
+  }
+}

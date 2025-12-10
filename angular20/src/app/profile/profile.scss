@@ -1,0 +1,43 @@
+.userpic {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+}
+.fsize-12 {
+    font-size: 12px;
+}
+.qrcode1 {
+  float: right;
+  width: 200px;
+  height: 200px;
+}
+.qrcode2 {
+  float: right;
+  width: 200px;
+  height: 200px;
+  opacity: 0.5;
+}
+.btn-1 {
+  max-width: 100px!important;
+}
+.btn-2 {
+  float: left!important;
+}
+#save {
+  margin-top: 30px!important;
+}
+@media (max-width: 575.98px) {
+  .btn-2 {
+    float: right!important;
+  }
+  #save {
+    margin-top: 30px!important;
+  }
+  
+ }
+
+ .bg-black {
+  background-color: black !important;
+  width: 100vw !important;
+  height: 90vh !important;
+ }

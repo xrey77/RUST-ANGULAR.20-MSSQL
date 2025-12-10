@@ -1,0 +1,24 @@
+.logo {
+    width: 120px;
+    height: 50px;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.bg-gray {
+    background-image: radial-gradient(ellipse at center, white, black);    
+    // background-image: radial-gradient(circle, purple, orange);    
+}
+.embossed-text {
+    text-shadow: 
+    -1px -1px 1px #f7faf8, /* Lighter shade for highlight */
+    3px 1px 1px #695b5b;   /* Darker shade for shadow */
+  }
+  
+#offcanvasExample {
+    width: 50% !important;
+}

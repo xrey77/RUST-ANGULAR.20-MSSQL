@@ -1,0 +1,26 @@
+<ng-template #loginTemplate let-c="close" let-d="dismiss">
+	<div class="modal-header modal-diaglog-centered bg-primary">
+		<h4 class="modal-title text-white" id="modal-basic-title">User's Login</h4>
+		<button (click)="closeLogin()" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+		<button id="hideLogin" type="button" class="btn-close d-none" aria-label="Close" (click)="d('Cross click')"></button>    
+	</div>
+	<div class="modal-body">
+    <form [formGroup]="loginForm" (ngSubmit)="submitLoginForm()" novalidate autocomplete="off">          
+      <div class="mb-3">
+          <input type="text" required formControlName="username" name="username" class="form-control border-primary" placeholder="enter Username">
+        </div>            
+        <div class="mb-3">
+          <input type="password" required formControlName="password" name="password" class="form-control border-primary" placeholder="enter Password">
+        </div>            
+        <button type="submit" class="btn btn-primary mx-1" [disabled]="isDisabled">login</button>
+        <button id="reset" type="reset" class="btn btn-primary">reset</button>
+        <button id="mfashow" type="button" class="btn btn-primary d-none"  data-bs-toggle="modal" data-bs-target="#staticMfa">mfa</button>
+
+    </form>
+  </div>
+	<div class="modal-footer">
+    <div class="w-100 text-center text-danger fontsize-12">{{loginMessage()}}</div>    
+	</div>
+</ng-template>
+<button id="showLogin" class="btn btn-lg d-none" (click)="loginOpen(loginTemplate)">Launch Login</button> 
+<app-mfa></app-mfa> 

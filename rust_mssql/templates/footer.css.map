@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/footer/footer.scss"],
+  "sourcesContent": [".fsize-12 {\n    font-size: 12px;\n}"],
+  "mappings": "AAAA,CAAA,SACI,UAAA",
+  "names": []
+}

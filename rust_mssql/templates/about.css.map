@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/about/about.scss"],
+  "sourcesContent": [".contact-img {\n    border-radius: 20px !important;\n    width: 100%;\n    height: 50vh;\n    padding-left: 70px;\n    padding-right: 70px;\n    object-fit: cover;\n}\n\n.h1 {\n padding-left: 70px;\n}\n\n.p70 {\n    padding-left: 70px;\n    padding-right: 70px;\n}\n.justify {\n    text-align: justify;\n}\n\n@media (max-width: 991.98px) {\n    .contact-img {\n        margin-left: -75px;\n        width: 125vw;\n        padding-right: 50px;\n        height: auto;\n        object-fit: cover;\n    }\n    \n    .h1 {\n        padding-left: 0px;\n       }\n       \n       .p70 {\n           padding-left: 0px;\n           padding-right: 0px;\n       }\n         \n }\n .bg-black {\n    height: auto;\n    background-color: black;\n    width: 100vw !important;\n    height: 90vh !important;\n    overflow-x: hidden !important;\n}\n"],
+  "mappings": "AAAA,CAAA,YAAA,cACI,eACA,MAAA,KACA,OAAA,KACA,aAAA,KACA,cAAA,KACA,WAAA,MAGJ,CAAA,GACC,aAAA,KAGD,CAAA,IACI,aAAA,KACA,cAAA,KAEJ,CAAA,QACI,WAAA,QAGJ,OAAA,CAAA,SAAA,EAAA,UACI,CAtBJ,YAuBQ,YAAA,MACA,MAAA,MACA,cAAA,KACA,OAAA,KACA,WAAA,MAGJ,CArBJ,GAsBQ,aAAA,EAGD,CArBP,IAsBW,aAAA,EACA,cAAA,GAIV,CAAA,SACG,OAAA,KACA,iBAAA,KACA,MAAA,gBACA,OAAA,eACA,WAAA",
+  "names": []
+}

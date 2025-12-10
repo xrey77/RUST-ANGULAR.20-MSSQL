@@ -1,0 +1,54 @@
+ <ng-template #registrationTemplate let-c="close" let-d="dismiss">
+	<div class="modal-header bg-success">
+		<h4 class="modal-title text-white" id="modal-basic-title">Account Registration</h4>
+		<button (click)="closeRegistration()" type="button" class="btn-close btn-close-white" aria-label="Close"></button>
+	</div>
+	<div class="modal-body">
+        <form [formGroup]="registrationForm" (ngSubmit)="submitRegistrationForm()" autocomplete="off">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <input type="text" required formControlName="firstname" name="firstname" class="form-control border-success" placeholder="enter First Name">
+                    </div>                    
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <input type="text" required formControlName="lastname" name="lastname" class="form-control border-success" placeholder="enter Last Name">
+                    </div>                    
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <input type="email" required formControlName="email" name="email" class="form-control border-success" placeholder="enter Email Address">
+                    </div>                    
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <input type="text" required formControlName="mobile" name="mobile" class="form-control border-success" placeholder="enter Mobile No.">
+                    </div>                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <input type="text" required formControlName="username" name="username" class="form-control border-success" placeholder="enter Username">
+                    </div>                    
+                </div>
+                <div class="col">
+                    <div class="mb-3">
+                        <input type="password" required formControlName="password" name="password" class="form-control border-success" placeholder="enter Password">
+                    </div>                    
+                </div>
+            </div>
+              <button type="submit" class="btn btn-success mx-1">register</button>
+              <button id="reset" type="reset" class="btn btn-success">reset</button>
+          </form>
+    </div>
+	<div class="modal-footer">
+        <div class="w-100 text-center text-danger">{{registrationMessage()}}</div>
+    </div>
+</ng-template>
+
+<button id="showRegistration" class="btn btn-lg d-none" (click)="registrationOpen(registrationTemplate)">Launch Registration</button>

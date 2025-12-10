@@ -1,0 +1,148 @@
+<nav class="navbar navbar-expand-lg bg-gray">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/"><img class="logo" src="http://127.0.0.1:3000/assets/images/logo.png" alt=""/></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link embossed-text" aria-current="page" [routerLink]="['/about']">About Us</a>
+          </li>
+          <li ngbDropdown class="nav-item" role="presentation">
+            <button type="button" class="nav-link embossed-text" ngbDropdownToggle>Products</button>
+            <div ngbDropdownMenu>
+              <button ngbDropdownItem [routerLink]="['/productlist']" >Products List</button>
+              <button ngbDropdownItem [routerLink]="['/productcatalog']">Products Catalog</button>
+              <div class="dropdown-divider"></div>
+              <button ngbDropdownItem [routerLink]="['/productsearch']">Product Search</button>
+            </div>
+          </li>          
+          <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle embossed-text" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Products
+            </a>            
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" [routerLink]="['/productlist']" >Products List</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/productcatalog']">Products Catalog</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" [routerLink]="['/productsearch']">Product Search</a></li>
+            </ul>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link embossed-text" [routerLink]="['/contact']">Contact Us</a>
+          </li>
+        </ul>
+
+        @if (userName) {
+
+          <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle text-barclay" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="user" [src]="profilepic" />&nbsp;<span class="embossed-text">{{userName}}</span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a (click)="logOut()" class="dropdown-item" href="#">Logout</a></li>
+                <li><a class="dropdown-item" [routerLink]="['/profile']">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>                
+                <li>
+                  <a class="dropdown-item text-dark" aria-current="page" href="#">Messenger</a>
+                </li>
+              </ul>
+            </li>
+          </ul>                    
+      } @else {
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">                       
+              <a (click)="userloginOpen()"  class="nav-link embossed-text" href="#">Login</a>
+          </li>
+          <li class="nav-item">
+            <a (click)="userRegistrationOpen()"  class="nav-link embossed-text" href="#">Register</a>
+          </li>
+        </ul>
+
+      }
+
+
+
+      </div>
+    </div>
+  </nav>
+  <!-- START-OFF CANVAS -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header bg-primary">
+      <img src="/images/logo.png" class="logo"/>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body bg-secondary">
+  
+      <ul class="nav flex-column">
+        <li class="nav-item" data-bs-dismiss="offcanvas">
+          <a class="nav-link text-light" [routerLink]="['about']">About Us</a>
+        </li>
+        <li><hr/></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Products
+          </a>
+          <ul class="dropdown-menu">
+            <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item" [routerLink]="['/productlist']">Products List</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item" [routerLink]="['/productcatalog']">Products Catalog</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item" [routerLink]="['/productsearch']">Product Search</a></li>
+          </ul>
+        </li>
+        <li><hr/></li>
+  
+        <li class="nav-item" data-bs-dismiss="offcanvas">
+          <a class="nav-link text-light" [routerLink]="['contact']">Contact Us</a>  
+        </li>
+        <li><hr/></li>
+  
+        @if (userName) {
+
+        <ul class="nav">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="user" [src]="profilepic" />&nbsp;{{userName}}
+            </a>
+            <ul class="dropdown-menu">
+              <li data-bs-dismiss="offcanvas"><a (click)="logOut()" class="dropdown-item " href="#">Logout</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li data-bs-dismiss="offcanvas"><a class="dropdown-item" [routerLink]="['/profile']">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li data-bs-dismiss="offcanvas">
+              <a class="dropdown-item text-dark" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#staticMessenger">Messenger</a>
+              </li>
+              
+            </ul>
+          </li>
+        </ul>          
+        <li><hr/></li>
+  
+      } @else {
+         
+          <li class="nav-item" data-bs-dismiss="offcanvas">
+            <a (click)="userloginOpen()"  class="nav-link text-light" href="#">Login</a>
+          </li>
+          <li><hr/></li>
+          <li class="nav-item" data-bs-dismiss="offcanvas">
+            <a (click)="userRegistrationOpen()"  class="nav-link text-light" href="#">Register</a>
+          </li>                    
+          <li><hr/></li>
+      }
+
+      </ul>
+  
+    </div>
+  </div>
+  <!-- END-OFF CANVAS -->  
+<app-login></app-login>  
+<app-register></app-register>
+<!-- <ng-container [ngTemplateOutlet]="content"></ng-container> -->
